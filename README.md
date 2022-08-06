@@ -9,43 +9,31 @@ Enjoy (:
 
 ## Some background knowledge
 
-### Variable Typing
+### Variables and Types
 
-A type is quite simply the form of value a variable holds. It could be a number or decimal or a list, etc.
-C is a statically typed language, so some clarification is needed first, especially for Python programmers
+Variables in C work like any other programming language, they are quite simply a location in your computers memory that holds a value.
 
-In Python, variables are dynamically typed. Variables can hold any sort of value, with no extra explanation
-```
-x = "hello world" // x is a string
-y = [0, 1, 2, 3] // y is a list
-z = lambda: print(x) // z holds a piece of code
-```
-And so on and so forth. However in C, variables must explicitly be given a type. 
+However, in C, variables must be given an explicit *type*. So whats a type?
 
-The declaration is a little bit more involved: 
-```
-int x = 1; // an integer
-float y = 3.14; // a floating point (decimal) value
-char z = 'A' // a character
-```
-Once asigned a type, a variable holds only values of its type, and the type cannot change
+A type is the form of value that a variable holds. C has only a few base types
 
-While this may seem a little odd, it helps clarify what a variable is supposed to hold
-```
-int age = 15; // ages are whole numbers
-float interest = 0.04; // while interest is usually a precentage
-```
-Takes a little bit to get used to.
+- **int**: a whole number
+- **float**: a floating point (decimal) value
+- **char**: a character
 
-### Variable Types
+A float only holds 7 digits behind the decimal. Generally this is fine, however, to ensure reliability, id recommand the **double** for decimal values. As the name implies, its twice as large as a float, and holds 15 digits behind the decimal. So why would you even want to use the less precise float in the first place? Its mostly historical, as the float takes up 4 bytes of memory, while the double (unsuprisingly) takes up 8, so the float was favored to conserve memory. Its 2022 now, computers have processors and memory in magnitudes faster and larger than in the 70s or 80s, so using a double has no cons concerning memory. 
 
-C has a very small amount of base types. They are as follows:
-- int: whole numbers
-- float: floating point decimal, holds up to 7 decimal digits
-- double: double precision decimal (twice as large as a float, holding 15 decimal digits)
-- char: quite literally a character
+Also, id like to point out that the **char** type is not actually a character, rather a number that encodes a character. However you dont really need to know this, as chars are asigned using single quotes with the character you desire inside (eg, 'a', 'b', 'c'). The ascii encoding that C uses can be refrenced [here](https://ascii-tables.com/).
 
-Expanding more on the char type, chars are actually numbers that hold a value representing a single character
-C uses standard ascii encoding, which can be found [here](https://ascii-tables.com/) if your interested
+**int** can also have modifiers, **long**, **short**, **unsigned**, and **signed**. These go before the keyword **int** when you actually declare the variable.
 
-And thats pretty much it. Howver, these types can have modifiers
+As for the **long** and **short**, these just determine how many bytes an int takes up. The int takes up 4 bytes, while a short int will be halved to 2 bytes, and the long int doubled to 8 bytes. Like earlier, this has to do with historical reasons to conserve memory. An int is fine for most things, but if you need a large number (larger than 2 billion), use a long int (up to 18 quadrillion).
+
+**signed** and **unsigned** have to do with if the variable can hold positive or negative values. Ints by default are **signed**, meaning they can hold either. However, if you need to make sure a number will not be negative, use the modifier **unsigned** to declare it as so. The **signed** keyword is utterly useless do to variables being signed by default, you will never have any reason to use it. 
+
+These modifiers can be stacked, (eg, long unsigned int, signed short int, etc).
+
+Thats about it for variables. In the coding section later ill demonstrate how to actually asign and use variables.
+
+### Functions
+
