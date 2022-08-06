@@ -29,7 +29,7 @@ Also, id like to point out that the **char** type is not actually a character, r
 
 As for the **long** and **short**, these just determine how many bytes an int takes up. The int takes up 4 bytes, while a short int will be halved to 2 bytes, and the long int doubled to 8 bytes. Like earlier, this has to do with historical reasons to conserve memory. An int is fine for most things, but if you need a large number (larger than 2 billion), use a long int (up to 18 quadrillion).
 
-**signed** and **unsigned** have to do with if the variable can hold positive or negative values. Ints by default are **signed**, meaning they can hold either. However, if you need to make sure a number will not be negative, use the modifier **unsigned** to declare it as so. The **signed** keyword is utterly useless do to variables being signed by default, you will never have any reason to use it. 
+**signed** and **unsigned** have to do with if the variable can hold positive or negative values. Ints by default are **signed**, meaning they can hold either. However, if you need to make sure a number will not be negative, use the modifier **unsigned** to declare it as so. The **signed** keyword is utterly useless due to variables being signed by default, you will never have any reason to use it. 
 
 These modifiers can be stacked, (eg, long unsigned int, signed short int, etc).
 
